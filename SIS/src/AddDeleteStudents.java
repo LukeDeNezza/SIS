@@ -50,6 +50,7 @@ public class AddDeleteStudents
 		{
 			Scanner userIntInput = new Scanner(System.in);
 			System.out.println("What number student would you like to delete?");
+			ChangeGradeAndClass.listStudents();
 			int studentNumber = userIntInput.nextInt();
 			
 			Database.students.remove(studentNumber-1);
