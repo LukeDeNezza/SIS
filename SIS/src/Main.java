@@ -7,16 +7,17 @@ public class Main
 		{
 
 		Database.fillArrayList();
-		//Sorting.howToSort();
-		//CalculateGPA.calculateGPA();
-			
+		loop();			
+		}
+		public static void loop()
+		{
 			Scanner userIntInput = new Scanner(System.in);
-		
+			
 			System.out.println("What would you like to do? \n(1) Add or delete a student \n(2) Change current grades/schedule \n(3) Sort students");
 			int answer = userIntInput.nextInt();
 			if(answer == 1)
 				{
-					System.out.println("What would you like to do? \n(1) Add a Student? \n(2) Delete a Student?");
+					System.out.println("What would you like to do? \n(1) Add a Student? \n(2) Delete a Student? \n(3) Return to Main Menu");
 					answer = userIntInput.nextInt();
 						if(answer == 1)
 							{
@@ -26,11 +27,15 @@ public class Main
 							{
 								AddDeleteStudents.deleteStudent();
 							}
+						else if(answer ==3)
+							{
+								loop();
+							}
 
 				}
 			else if(answer == 2)
 				{
-					System.out.println("What would you like to do? \n(1) Change a student's Grade \n(2) Change a student's schedule");
+					System.out.println("What would you like to do? \n(1) Change a student's Grade \n(2) Change a student's schedule \n(3) Return to Main Menu");
 					int answerGradeAndClass = userIntInput.nextInt();
 						if(answerGradeAndClass == 1)
 							{
@@ -42,10 +47,17 @@ public class Main
 								ChangeGradeAndClass.listStudents();
 								ChangeGradeAndClass.changeClass();
 							}
+						else if(answer == 3)
+							{
+								loop();
+							}
 				}
 			else if(answer == 3)
 				{
 					Sorting.howToSort();
 				}
+		loop();
 		}
 	}
+
+
