@@ -17,9 +17,12 @@ public class Sorting
 			}
 		
 		else if(sortingChoice == 2)
-		{
-		
-		}
+
+			{
+			Collections.sort(Database.students, new GPASorter());
+			PrintStudents.printStudents();
+			}
+
 		
 		else if(sortingChoice == 3)
 			{
